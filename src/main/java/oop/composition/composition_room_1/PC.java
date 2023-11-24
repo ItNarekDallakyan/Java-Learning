@@ -1,0 +1,37 @@
+package oop.composition.composition_room_1;
+
+/**
+ * Created by Bill on 5/26/17.
+ */
+public class PC {
+    private Case theCase;
+    private Monitor monitor;
+    private Motherboard motherboard;
+
+    public PC(Case theCase, Monitor monitor, Motherboard motherboard) {
+        this.theCase = theCase;
+        this.monitor = monitor;
+        this.motherboard = motherboard;
+    }
+
+    private Case getTheCase() {
+        return theCase;
+    }
+
+    private Monitor getMonitor() {
+        return monitor;
+    }
+
+    private Motherboard getMotherboard() {
+        return motherboard;
+    }
+
+    public void powerUp(){
+        getTheCase().pressPowerButton();
+        drawLogo();
+    }
+
+    private void drawLogo(){
+        getMonitor().drawPixelAt(1200, 50, "yellow");
+    }
+}
